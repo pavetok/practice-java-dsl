@@ -1,12 +1,23 @@
 package inc.redpill;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.util.List;
+
 public class Practice {
+    @NotBlank
+    private String name;
+    @NotBlank
     private String resultType;
-    private String inputType;
+    @Size(min = 1)
+    @NotNull
+    private List<String> resourceTypes;
 
     public static final class PracticeBuilder {
+        private String name;
         private String resultType;
-        private String inputType;
+        private List<String> resourceTypes;
 
         private PracticeBuilder() {
         }
@@ -15,20 +26,26 @@ public class Practice {
             return new PracticeBuilder();
         }
 
+        public PracticeBuilder withName(String name) {
+            this.name = name;
+            return this;
+        }
+
         public PracticeBuilder withResultType(String resultType) {
             this.resultType = resultType;
             return this;
         }
 
-        public PracticeBuilder withInputType(String inputType) {
-            this.inputType = inputType;
+        public PracticeBuilder withResourceTypes(List<String> resourceTypes) {
+            this.resourceTypes = resourceTypes;
             return this;
         }
 
         public Practice build() {
             Practice practice = new Practice();
             practice.resultType = this.resultType;
-            practice.inputType = this.inputType;
+            practice.name = this.name;
+            practice.resourceTypes = this.resourceTypes;
             return practice;
         }
     }

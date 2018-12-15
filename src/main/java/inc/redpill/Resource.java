@@ -1,6 +1,9 @@
 package inc.redpill;
 
+import javax.validation.constraints.NotBlank;
+
 public class Resource {
+    @NotBlank
     private String type;
 
     public static final class ResourceBuilder {

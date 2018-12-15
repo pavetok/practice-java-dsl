@@ -1,11 +1,16 @@
 package inc.redpill;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 public class Work {
+    @NotNull
     private Hole hole;
+    @NotNull
     private Practice practice;
+    @NotNull
     private List<Resource> resources;
+    @NotNull
     private List<Work> works;
 
     public static final class WorkBuilder {

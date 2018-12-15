@@ -2,12 +2,26 @@ package inc.redpill;
 
 import inc.redpill.Hole.HoleBuilder;
 import inc.redpill.Practice.PracticeBuilder;
+import inc.redpill.Resource.ResourceBuilder;
 import inc.redpill.Work.WorkBuilder;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
+
 import static java.util.Arrays.asList;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class WorkTest {
+    private static Validator validator;
+
+    @BeforeAll
+    static void setUpValidator() {
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        validator = factory.getValidator();
+    }
 
     @Test
     void shouldBuildWork() {
@@ -16,11 +30,12 @@ class WorkTest {
                 .build();
 
         Practice somePractice = PracticeBuilder.aPractice()
+                .withName("SomePractice")
                 .withResultType("Foo")
-                .withInputType("Bar")
+                .withResourceTypes(asList("Bar"))
                 .build();
 
-        Resource someResource = Resource.ResourceBuilder.aResource()
+        Resource someResource = ResourceBuilder.aResource()
                 .withType("Bar")
                 .build();
 
@@ -33,5 +48,7 @@ class WorkTest {
                 .withResources(asList(someResource))
                 .withWorks(asList(someWork))
                 .build();
+
+        assertThat(validator.validate(anotherWork)).isEmpty();
     }
 }
