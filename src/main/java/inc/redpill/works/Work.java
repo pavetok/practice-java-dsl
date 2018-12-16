@@ -1,9 +1,16 @@
-package inc.redpill;
+package inc.redpill.works;
+
+import inc.redpill.Context;
+import inc.redpill.Visitable;
+import inc.redpill.Visitor;
+import inc.redpill.holes.Hole;
+import inc.redpill.practices.Practice;
+import inc.redpill.resources.Resource;
 
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
-public class Work {
+public class Work implements Visitable {
     @NotNull
     private Hole hole;
     @NotNull
@@ -12,6 +19,27 @@ public class Work {
     private List<Resource> resources;
     @NotNull
     private List<Work> works;
+
+    @Override
+    public Context visit(Visitor visitor, Context context) {
+        return visitor.apply(this, context);
+    }
+
+    public Hole getHole() {
+        return hole;
+    }
+
+    public Practice getPractice() {
+        return practice;
+    }
+
+    public List<Resource> getResources() {
+        return resources;
+    }
+
+    public List<Work> getWorks() {
+        return works;
+    }
 
     public static final class WorkBuilder {
         private Hole hole;

@@ -1,10 +1,19 @@
-package inc.redpill;
+package inc.redpill.holes;
+
+import inc.redpill.Context;
+import inc.redpill.Visitable;
+import inc.redpill.Visitor;
 
 import javax.validation.constraints.NotBlank;
 
-public class Hole {
+public class Hole implements Visitable {
     @NotBlank
     private String type;
+
+    @Override
+    public Context visit(Visitor visitor, Context context) {
+        return visitor.apply(this, context);
+    }
 
     public static final class HoleBuilder {
         private String type;

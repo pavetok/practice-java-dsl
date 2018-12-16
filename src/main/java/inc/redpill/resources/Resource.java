@@ -1,10 +1,18 @@
-package inc.redpill;
+package inc.redpill.resources;
+
+import inc.redpill.Visitable;
+import inc.redpill.Visitor;
 
 import javax.validation.constraints.NotBlank;
 
-public class Resource {
+public class Resource implements Visitable {
     @NotBlank
     private String type;
+
+    @Override
+    public void visit(Visitor visitor) {
+        visitor.apply(this);
+    }
 
     public static final class ResourceBuilder {
         private String type;

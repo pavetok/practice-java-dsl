@@ -1,9 +1,14 @@
-package inc.redpill;
+package inc.redpill.works;
 
-import inc.redpill.Hole.HoleBuilder;
-import inc.redpill.Practice.PracticeBuilder;
-import inc.redpill.Resource.ResourceBuilder;
-import inc.redpill.Work.WorkBuilder;
+import inc.redpill.CheckVisitor;
+import inc.redpill.Context;
+import inc.redpill.holes.Hole;
+import inc.redpill.holes.Hole.HoleBuilder;
+import inc.redpill.practices.Practice;
+import inc.redpill.practices.Practice.PracticeBuilder;
+import inc.redpill.resources.Resource;
+import inc.redpill.resources.Resource.ResourceBuilder;
+import inc.redpill.works.Work.WorkBuilder;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -50,5 +55,6 @@ class WorkTest {
                 .build();
 
         assertThat(validator.validate(anotherWork)).isEmpty();
+        assertThat(someWork.visit(new CheckVisitor(), new Context()));
     }
 }

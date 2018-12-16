@@ -1,11 +1,14 @@
-package inc.redpill;
+package inc.redpill.practices;
+
+import inc.redpill.Visitable;
+import inc.redpill.Visitor;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.List;
 
-public class Practice {
+public class Practice implements Visitable {
     @NotBlank
     private String name;
     @NotBlank
@@ -13,6 +16,11 @@ public class Practice {
     @Size(min = 1)
     @NotNull
     private List<String> resourceTypes;
+
+    @Override
+    public void visit(Visitor visitor) {
+        visitor.apply(this);
+    }
 
     public static final class PracticeBuilder {
         private String name;
