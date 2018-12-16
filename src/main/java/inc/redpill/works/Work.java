@@ -4,16 +4,26 @@ import inc.redpill.holes.Hole;
 import inc.redpill.practices.Practice;
 import inc.redpill.resources.Resource;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
+@AWork
 public class Work {
+
+    @Valid
     @NotNull
     private Hole hole;
+
+    @Valid
     @NotNull
     private Practice practice;
+
+    @Valid
     @NotNull
     private List<Resource> resources;
+
+    @Valid
     @NotNull
     private List<Work> works;
 

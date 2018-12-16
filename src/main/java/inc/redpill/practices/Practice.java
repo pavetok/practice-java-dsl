@@ -1,17 +1,18 @@
 package inc.redpill.practices;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 public class Practice {
+
     @NotBlank
     private String name;
+
     @NotBlank
     private String resultType;
-    @Size(min = 1)
-    @NotNull
+
+    @NotEmpty
     private List<String> resourceTypes;
 
     public static final class PracticeBuilder {

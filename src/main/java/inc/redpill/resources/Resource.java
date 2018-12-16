@@ -3,6 +3,7 @@ package inc.redpill.resources;
 import javax.validation.constraints.NotBlank;
 
 public class Resource {
+
     @NotBlank
     private String type;
 

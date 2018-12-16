@@ -3,6 +3,7 @@ package inc.redpill.holes;
 import javax.validation.constraints.NotBlank;
 
 public class Hole {
+
     @NotBlank
     private String type;
 
