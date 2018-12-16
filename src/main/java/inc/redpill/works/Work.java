@@ -11,21 +11,37 @@ import java.util.List;
 @AWork
 public class Work {
 
-    @Valid
     @NotNull
+    @Valid
     private Hole hole;
 
-    @Valid
     @NotNull
+    @Valid
     private Practice practice;
 
-    @Valid
     @NotNull
+    @Valid
     private List<Resource> resources;
 
-    @Valid
     @NotNull
+    @Valid
     private List<Work> works;
+
+    public Hole getHole() {
+        return hole;
+    }
+
+    public Practice getPractice() {
+        return practice;
+    }
+
+    public List<Resource> getResources() {
+        return resources;
+    }
+
+    public List<Work> getWorks() {
+        return works;
+    }
 
     public static final class WorkBuilder {
         private Hole hole;

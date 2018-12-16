@@ -15,7 +15,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Constraint(validatedBy = {WorkValidator.class})
 @Documented
 public @interface AWork {
-    String message() default "Work is invalid: ${validatedValue}";
+    String message() default "work is invalid: ${validatedValue}";
 
     Class<?>[] groups() default {};
 

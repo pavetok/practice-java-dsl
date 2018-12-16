@@ -7,6 +7,10 @@ public class Hole {
     @NotBlank
     private String type;
 
+    public String getType() {
+        return type;
+    }
+
     public static final class HoleBuilder {
         private String type;
 

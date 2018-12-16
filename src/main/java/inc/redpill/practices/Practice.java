@@ -15,6 +15,18 @@ public class Practice {
     @NotEmpty
     private List<String> resourceTypes;
 
+    public String getName() {
+        return name;
+    }
+
+    public String getResultType() {
+        return resultType;
+    }
+
+    public List<String> getResourceTypes() {
+        return resourceTypes;
+    }
+
     public static final class PracticeBuilder {
         private String name;
         private String resultType;

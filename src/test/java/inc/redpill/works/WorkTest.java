@@ -7,12 +7,12 @@ import inc.redpill.practices.Practice.PracticeBuilder;
 import inc.redpill.resources.Resource;
 import inc.redpill.resources.Resource.ResourceBuilder;
 import inc.redpill.works.Work.WorkBuilder;
+import org.hibernate.validator.HibernateValidator;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import javax.validation.Validation;
 import javax.validation.Validator;
-import javax.validation.ValidatorFactory;
 
 import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -22,8 +22,11 @@ class WorkTest {
 
     @BeforeAll
     static void setUpValidator() {
-        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-        validator = factory.getValidator();
+        validator = Validation.byProvider(HibernateValidator.class)
+                .configure()
+                .failFast(true)
+                .buildValidatorFactory()
+                .getValidator();
     }
 
     @Test
