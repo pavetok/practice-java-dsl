@@ -1,4 +1,8 @@
-package inc.redpill;
+package inc.redpill.works;
+
+import inc.redpill.holes.Hole;
+import inc.redpill.practices.Practice;
+import inc.redpill.resources.Resource;
 
 import javax.validation.constraints.NotNull;
 import java.util.List;

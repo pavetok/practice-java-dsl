@@ -1,4 +1,4 @@
-package inc.redpill;
+package inc.redpill.resources;
 
 import javax.validation.constraints.NotBlank;
 

@@ -1,9 +1,12 @@
-package inc.redpill;
+package inc.redpill.works;
 
-import inc.redpill.Hole.HoleBuilder;
-import inc.redpill.Practice.PracticeBuilder;
-import inc.redpill.Resource.ResourceBuilder;
-import inc.redpill.Work.WorkBuilder;
+import inc.redpill.holes.Hole;
+import inc.redpill.holes.Hole.HoleBuilder;
+import inc.redpill.practices.Practice;
+import inc.redpill.practices.Practice.PracticeBuilder;
+import inc.redpill.resources.Resource;
+import inc.redpill.resources.Resource.ResourceBuilder;
+import inc.redpill.works.Work.WorkBuilder;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
