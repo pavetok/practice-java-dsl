@@ -1,5 +1,6 @@
 package inc.redpill.works;
 
+import inc.redpill.groups.WorkCheck;
 import inc.redpill.holes.Hole;
 import inc.redpill.holes.Hole.HoleBuilder;
 import inc.redpill.practices.Practice;
@@ -15,6 +16,7 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 
 import static java.util.Arrays.asList;
+import static java.util.Collections.emptyList;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class WorkTest {
@@ -46,6 +48,10 @@ class WorkTest {
                 .build();
 
         Work someWork = WorkBuilder.aWork()
+                .withHole(someHole)
+                .withPractice(somePractice)
+                .withResources(emptyList())
+                .withWorks(emptyList())
                 .build();
 
         Work anotherWork = WorkBuilder.aWork()
@@ -55,6 +61,8 @@ class WorkTest {
                 .withWorks(asList(someWork))
                 .build();
 
-        assertThat(validator.validate(anotherWork)).isEmpty();
+//        assertThat(validator.validate(anotherWork)).isEmpty();
+        assertThat(validator.validate(anotherWork, WorkCheck.class)).isEmpty();
+//        assertThat(validator.validate(anotherWork, InferenceCheck.class)).isEmpty();
     }
 }

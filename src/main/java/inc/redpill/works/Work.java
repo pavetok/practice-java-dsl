@@ -1,5 +1,6 @@
 package inc.redpill.works;
 
+import inc.redpill.groups.WorkCheck;
 import inc.redpill.holes.Hole;
 import inc.redpill.practices.Practice;
 import inc.redpill.resources.Resource;
@@ -8,7 +9,11 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
-@AWork
+@AWork(groups = WorkCheck.class)
+//@AWork
+//@GroupSequence({Work.class, PracticeCheck.class, ResourceCheck.class})
+//@GroupSequence({Practice.class, Resource.class, Work.class})
+//@GroupSequence({Work.class, Resource.class, Practice.class})
 public class Work {
 
     @NotNull

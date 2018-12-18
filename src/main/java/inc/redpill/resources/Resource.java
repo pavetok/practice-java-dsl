@@ -1,7 +1,11 @@
 package inc.redpill.resources;
 
+import inc.redpill.groups.ResourceCheck;
+
 import javax.validation.constraints.NotBlank;
 
+@AResource(groups = ResourceCheck.class)
+//@AResource
 public class Resource {
 
     @NotBlank
