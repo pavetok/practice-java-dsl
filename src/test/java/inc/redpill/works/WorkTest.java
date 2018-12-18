@@ -14,6 +14,8 @@ import org.junit.jupiter.api.Test;
 
 import javax.validation.Validation;
 import javax.validation.Validator;
+import java.util.HashMap;
+import java.util.Map;
 
 import static java.util.Arrays.asList;
 import static java.util.Collections.emptyList;
@@ -24,9 +26,12 @@ class WorkTest {
 
     @BeforeAll
     static void setUpValidator() {
+        Map<String, Object> context = new HashMap<>();
+        context.put("foo", "bar");
         validator = Validation.byProvider(HibernateValidator.class)
                 .configure()
                 .failFast(true)
+                .constraintValidatorPayload(context)
                 .buildValidatorFactory()
                 .getValidator();
     }
