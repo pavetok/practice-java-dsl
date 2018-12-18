@@ -1,6 +1,5 @@
 package inc.redpill.works;
 
-import inc.redpill.groups.WorkCheck;
 import inc.redpill.holes.Hole;
 import inc.redpill.holes.Hole.HoleBuilder;
 import inc.redpill.practices.Practice;
@@ -66,8 +65,8 @@ class WorkTest {
                 .withWorks(asList(someWork))
                 .build();
 
-//        assertThat(validator.validate(anotherWork)).isEmpty();
-        assertThat(validator.validate(anotherWork, WorkCheck.class)).isEmpty();
+        assertThat(validator.validate(anotherWork)).isEmpty();
+//        assertThat(validator.validate(anotherWork, WorkCheck.class)).isEmpty();
 //        assertThat(validator.validate(anotherWork, InferenceCheck.class)).isEmpty();
     }
 }

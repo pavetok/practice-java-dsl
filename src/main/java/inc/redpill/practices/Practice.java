@@ -2,12 +2,13 @@ package inc.redpill.practices;
 
 import inc.redpill.groups.PracticeCheck;
 
+import javax.validation.GroupSequence;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 @APractice(groups = PracticeCheck.class)
-//@APractice
+@GroupSequence({PracticeCheck.class, Practice.class})
 public class Practice {
 
     @NotBlank
