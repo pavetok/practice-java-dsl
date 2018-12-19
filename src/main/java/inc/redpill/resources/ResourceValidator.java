@@ -7,6 +7,6 @@ public class ResourceValidator implements ConstraintValidator<AResource, Resourc
     @Override
     public boolean isValid(Resource value, ConstraintValidatorContext context) {
         System.out.println("ResourceValidator");
-        return false;
+        return true;
     }
 }

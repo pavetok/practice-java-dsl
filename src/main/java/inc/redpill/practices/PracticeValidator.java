@@ -11,10 +11,10 @@ public class PracticeValidator implements ConstraintValidator<APractice, Practic
     @Override
     public boolean isValid(Practice value, ConstraintValidatorContext context) {
         System.out.println("PracticeValidator");
-        Map<String, Object> countryCode = context
+        Map<String, Object> payload = context
                 .unwrap( HibernateConstraintValidatorContext.class )
                 .getConstraintValidatorPayload(HashMap.class);
-        System.out.println(countryCode);
-        return false;
+        System.out.println(payload);
+        return true;
     }
 }
