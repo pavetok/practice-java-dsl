@@ -1,7 +1,5 @@
 package inc.redpill.holes;
 
-import inc.redpill.groups.HoleCheck;
-
 import javax.validation.constraints.NotBlank;
 
 @AHole(groups = HoleCheck.class)

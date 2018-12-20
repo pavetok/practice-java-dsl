@@ -1,5 +1,8 @@
 package inc.redpill.works;
 
+import inc.redpill.holes.HoleCheck;
+import inc.redpill.practices.PracticeCheck;
+import inc.redpill.resources.ResourceCheck;
 import org.hibernate.validator.HibernateValidator;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -10,6 +13,7 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Path;
 import javax.validation.Validation;
 import javax.validation.Validator;
+import javax.validation.groups.Default;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -39,7 +43,7 @@ public class WorkTest {
     @MethodSource("workProvider")
     public void shouldValidateWork(String path, String message, Work work) {
         // when
-        Set<ConstraintViolation<Work>> violations = validator.validate(work);
+        Set<ConstraintViolation<Work>> violations = validator.validate(work, Default.class, WorkCheck.class, HoleCheck.class, PracticeCheck.class, ResourceCheck.class);
         // then
         assertThat(violations)
                 .extracting(ConstraintViolation::getPropertyPath)

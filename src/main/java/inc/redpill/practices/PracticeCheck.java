@@ -1,6 +1,5 @@
-package inc.redpill.groups;
+package inc.redpill.practices;
 
 public interface PracticeCheck {
 //public interface PracticeCheck extends InferenceCheck {
-//public interface PracticeCheck extends Default {
 }

@@ -1,6 +1,5 @@
-package inc.redpill.groups;
+package inc.redpill.resources;
 
 public interface ResourceCheck {
 //public interface ResourceCheck extends InferenceCheck {
-//public interface ResourceCheck extends Default {
 }

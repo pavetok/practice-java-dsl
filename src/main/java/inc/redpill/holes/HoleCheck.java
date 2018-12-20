@@ -1,4 +1,4 @@
-package inc.redpill.groups;
+package inc.redpill.holes;
 
 public interface HoleCheck {
 }
