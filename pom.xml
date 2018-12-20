@@ -6,12 +6,43 @@
 
     <groupId>inc.redpill</groupId>
     <artifactId>practice-java-dsl</artifactId>
+    <packaging>pom</packaging>
     <version>latest</version>
+
+    <modules>
+        <module>data-oriented-dsl</module>
+    </modules>
 
     <dependencies>
         <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.el</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
             <version>RELEASE</version>
             <scope>test</scope>
         </dependency>
