@@ -11,6 +11,7 @@
 
     <modules>
         <module>data-oriented-dsl</module>
+        <module>lang-oriented-dsl</module>
     </modules>
 
     <dependencies>
