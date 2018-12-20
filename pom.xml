@@ -6,7 +6,12 @@
 
     <groupId>inc.redpill</groupId>
     <artifactId>practice-java-dsl</artifactId>
+    <packaging>pom</packaging>
     <version>latest</version>
+
+    <modules>
+        <module>data-oriented-dsl</module>
+    </modules>
 
     <dependencies>
         <dependency>
